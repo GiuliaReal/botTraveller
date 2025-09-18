@@ -1,3 +1,3 @@
 #!/bin/bash
 
-zip -r "bot.zip" * -x bot.zip"
+zip -r "bot.zip" * -x "bot.zip"
