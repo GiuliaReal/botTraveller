@@ -1,0 +1,14 @@
+pesquisar_task:
+  description: >
+    Realizar uma pesquisa sobre o destino {destino}, trazendo detalhes sobre hotéis localizados em pontos seguros e estratégicos, além dos passeios turisticos e referências gastronomicas pertencentes à região do {destino}
+    Se certifique sobre encontrar informações relevantes e atuais. O ano atual é 2025.
+  expected_output: >
+    Uma lista com pelo menos 5 hotéis, 5 restaurantes e 5 passeios para serem feitos no {destino}
+  agent: pesquisador
+
+criar_roteiro_task:
+description: >
+  Ler o relatório que recebeu e, com base no orçamento do cliente e nos valores do relatório do destino, criar um roteiro de viagem personalizado.
+expected_output: >
+  um roteiro com o hotel, 3 restaurantes a serem visiatdos e 3 passeios a serem feitos no destino, em formato markdown.
+agent: agente_viagem
