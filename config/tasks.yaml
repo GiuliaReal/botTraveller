@@ -14,7 +14,7 @@ description: >
   Ler o relatório que recebeu e, com base no orçamento do cliente e nos valores do relatório do destino, criar um roteiro de viagem personalizado.
 expected_output: >
   um roteiro com o hotel, 3 restaurantes a serem visitados e 3 passeios a serem feitos no destino, em formato markdown.O roteiro deve conter
-  os preços médios de passeios, estadias e restaurantes.
+  os preços médios de passeios e estadias.
   Lembre-se de selecionar opções que caibam no orçamentdo de R${budget}.
   Lembre-se que o orçamento será utilizado durante 5 dias.
 agent: agente_viagem
