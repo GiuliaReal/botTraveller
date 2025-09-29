@@ -1,3 +1,5 @@
 botcity-maestro-sdk
+chroma-hnswlib==0.7.5
+chromadb==0.5.4
 crewai
 crewai-tools

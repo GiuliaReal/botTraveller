@@ -24,9 +24,6 @@ if __name__ == '__main__':
 
     SERPER_API_KEY = maestro.get_credential(label="workshop_apa", key="SERPER_API_KEY")
     OPENAI_API_KEY = maestro.get_credential(label="workshop_apa", key="OPENAI_API_KEY")
-    AZURE_API_KEY=  maestro.get_credential(label="workshop_apa", key="AZURE_API_KEY")
-    AZURE_API_BASE=maestro.get_credential(label="workshop_apa", key="AZURE_API_BASE")
-    AZURE_API_VERSION=maestro.get_credential(label="workshop_apa", key="AZURE_API_VERSION")
     
     os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
     os.environ['SERPER_API_KEY'] = SERPER_API_KEY
@@ -38,8 +35,8 @@ if __name__ == '__main__':
 
         maestro.alert(
             task_id=execution.task_id,
-            title="Info Alert",
-            message="This is an info alert",
+            title="Bot Travel iniciou a tarefa",
+            message="Bot Iniciado com sucesso",
             alert_type=AlertType.INFO)
 
         output = run(destino, budget)
@@ -55,7 +52,7 @@ if __name__ == '__main__':
         # A extensão é de outros tipos de arquivo
         maestro.post_artifact(
             task_id=execution.task_id,
-            artifact_name="roteiro",
+            artifact_name=f"roteiro-{destino}",
             filepath= f"./{nome_arquivo}"
         )
 
@@ -68,6 +65,11 @@ if __name__ == '__main__':
         status = AutomationTaskFinishStatus.FAILED
         message = f"Houve falha de execução ==> erro :{exc}"
     finally:
+        maestro.alert(
+            task_id=execution.task_id,
+            title="Bot Travel FINALIZADO",
+            message="Bot Inicifinalizado com sucesso",
+            alert_type=AlertType.INFO)
         maestro.finish_task(maestro.task_id,status=status, message=message)
     
 
