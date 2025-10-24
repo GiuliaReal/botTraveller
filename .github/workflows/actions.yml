@@ -30,7 +30,7 @@ jobs:
           LOGIN: ${{ secrets.LOGIN }}
           KEY: ${{ secrets.KEY }}
         run: |
-          cicd-pipeline-utils/scripts/bot.sh deploy -version "1.3.7" -botFile "./bot.zip" -botId "agente-viagens-v1" -type "python" -repository "DEFAULT"
+          cicd-pipeline-utils/scripts/bot.sh deploy -version "1.3.8" -botFile "./bot.zip" -botId "agente-viagens-v1" -type "python" -repository "DEFAULT"
 
       - name: Release Bot
         env:
@@ -38,4 +38,4 @@ jobs:
           LOGIN: ${{ secrets.LOGIN }}
           KEY: ${{ secrets.KEY }}
         run: |
-          cicd-pipeline-utils/scripts/bot.sh release -version "1.3.7" -botId "agente-viagens-v1"
+          cicd-pipeline-utils/scripts/bot.sh release -version "1.3.8" -botId "agente-viagens-v1"
