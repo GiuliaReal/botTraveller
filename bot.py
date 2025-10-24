@@ -58,7 +58,7 @@ if __name__ == '__main__':
 
         status = AutomationTaskFinishStatus.SUCCESS
 
-        message = "Tarefa finalizada com sucesso!"
+        message = "Roteiro de viagem finalizada com sucesso!"
         
     except Exception as exc:
         maestro.error(maestro.task_id, exc)
